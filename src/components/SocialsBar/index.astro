@@ -1,0 +1,26 @@
+---
+import GithubLogo from "../../assets/images/github-logo.png"
+import LinkedinLogo from "../../assets/images/linkedin-logo.png"
+import SocialLogo from "./SocialLogo.astro"
+
+const socials = [
+  {
+    href: "https://github.com/AmitRockBear",
+    src: GithubLogo,
+    alt: "Github Social",
+  },
+  {
+    href: "https://www.linkedin.com/in/amit-rockach-60745b1b4/",
+    src: LinkedinLogo,
+    alt: "Linkedin Social",
+  },
+]
+---
+
+<div class="flex gap-1">
+  {
+    socials.map((social) => (
+      <SocialLogo href={social.href} src={social.src} alt={social.alt} />
+    ))
+  }
+</div>
