@@ -1,0 +1,23 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content"
+import ListTitle from "../ListTitle.astro"
+import PostCard from "./PostCard.astro"
+import { sortCollectionEntriesFromNewest } from "../../utils/sort"
+
+const postEntries = await getCollection("posts")
+const recentPostEntries = sortCollectionEntriesFromNewest(postEntries).slice(
+  0,
+  10
+) as CollectionEntry<"posts">[]
+---
+
+<div>
+  <ListTitle title="Recent Posts" />
+  {
+    recentPostEntries.map((entry) => (
+      <a class="group" href={`posts/${entry.slug}`}>
+        <PostCard post={entry.data} />
+      </a>
+    ))
+  }
+</div>
