@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content"
-import PageLayout from "./PageLayout.astro"
+import PageBaseLayout from "./PageBaseLayout.astro"
 
 interface Props {
   post: CollectionEntry<"posts">["data"]
@@ -10,8 +10,7 @@ const { post } = Astro.props
 const { title, type, publishDate } = post
 ---
 
-<!-- title={`Post - ${title}`} -->
-<PageLayout title={title}>
+<PageBaseLayout title={`Post - ${title}`}>
   <div class="flex flex-col text-xl break-words mb-16">
     <h6 class="pt-16 text-gray-500 text-lg">
       Publish Date: {publishDate.toISOString().slice(0, 10)}
@@ -26,4 +25,4 @@ const { title, type, publishDate } = post
       <slot />
     </article>
   </div>
-</PageLayout>
+</PageBaseLayout>
