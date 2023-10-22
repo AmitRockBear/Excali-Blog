@@ -1,0 +1,23 @@
+---
+import type { CollectionEntry } from "astro:content"
+import Chip from "../Chip.astro"
+
+interface Props {
+  project: CollectionEntry<"projects">["data"]
+}
+
+const { project } = Astro.props
+const { title, description, chips } = project
+---
+
+<div class="h-9"></div>
+<div class="space-y-4">
+  <h2 class="text-2xl font-semibold group-hover:text-indigo-500">{title}</h2>
+  <div>{chips.map((chip) => <Chip text={chip} />)}</div>
+  <p class="text-xl">{description}</p>
+  <h4 class="text-lg font-bold">
+    See more <span
+      class="invisible group-hover:text-indigo-500 group-hover:visible">🡢</span
+    >
+  </h4>
+</div>
