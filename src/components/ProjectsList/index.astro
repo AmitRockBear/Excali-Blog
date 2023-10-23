@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content"
+import type { CollectionEntry } from "astro:content"
 import ListTitle from "../ListTitle.astro"
 import ProjectCard from "./ProjectCard.astro"
 import { sortCollectionEntriesFromNewest } from "../../utils/sort"
-import type { CollectionEntry } from "astro:content"
 
 const projectEntries = await getCollection("projects")
 const recentProjectEntries = sortCollectionEntriesFromNewest(
@@ -15,9 +15,9 @@ const recentProjectEntries = sortCollectionEntriesFromNewest(
   <ListTitle title="Recent Projects" />
   {
     recentProjectEntries.map((entry) => (
-      <a class="group" href={`projects/${entry.slug}`}>
+      <div class="group">
         <ProjectCard project={entry.data} />
-      </a>
+      </div>
     ))
   }
 </div>

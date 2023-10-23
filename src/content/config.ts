@@ -11,12 +11,13 @@ const postsCollection = defineCollection({
 })
 
 const projectsCollection = defineCollection({
-  type: "content",
+  type: "data",
   schema: z.object({
     title: z.string(),
     description: z.string(),
     chips: z.array(z.string()),
     githubLink: z.string(),
+    previewLink: z.string().optional(),
     publishDate: z.date(),
   }),
 })
