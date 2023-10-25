@@ -1,0 +1,30 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content"
+import PageBaseLayout from "../layouts/PageBaseLayout.astro"
+import ProjectsList from "../components/Projects/ProjectsList/index.astro"
+import { sortCollectionEntriesFromNewest } from "../utils/sort"
+
+const projectEntries = await getCollection("projects")
+const numOfProjects = projectEntries.length
+const projectEntriesFromNewest = sortCollectionEntriesFromNewest(
+  projectEntries
+) as CollectionEntry<"projects">[]
+
+const title = "Projects"
+---
+
+<PageBaseLayout title={title}>
+  <div class="mx-8">
+    <div class="flex justify-between mb-4">
+      <h1 class="text-4xl font-bold">
+        {title}
+      </h1>
+      <div class="flex flex-col justify-end">
+        <h4 class="text-md font-bold">
+          {`${[numOfProjects]} total`}
+        </h4>
+      </div>
+    </div>
+    <ProjectsList projectEntries={projectEntriesFromNewest} />
+  </div>
+</PageBaseLayout>

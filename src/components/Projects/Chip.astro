@@ -1,0 +1,127 @@
+---
+// const chipTextToColor = {
+//   React: "bg-sky-400 text-sky-900",
+//   Typescript: "bg-blue-400 text-blue-900",
+//   Tailwind: "bg-cyan-400 text-cyan-900",
+//   Astro: "bg-violet-400 text-violet-900",
+//   Zod: "bg-teal-400 text-teal-900",
+//   Trpc: "bg-pink-400 text-pink-900",
+//   Winston: "bg-slate-400 text-slate-900",
+//   Prisma: "bg-emerald-400 text-emerald-900",
+//   Jwt: "bg-orange-400 text-orange-900",
+//   Javascript: "bg-yellow-400 text-yellow-900",
+//   Ejs: "bg-amber-400 text-amber-900",
+//   Postgersql: "bg-stone-400 text-stone-900",
+//   Mongo: "bg-green-400 text-green-900",
+// }
+
+// const { text } = Astro.props as { textColor: keyof typeof chipTextToColor }
+
+// const colorClasses = chipTextToColor[text] ?? "bg-sky-400 text-sky-900"
+
+interface Props {
+  text: string
+}
+
+const TAILWIND_COLORS = [
+  {
+    background: "bg-slate-400",
+    textColor: "text-slate-900",
+  },
+  {
+    background: "bg-gray-400",
+    textColor: "text-gray-900",
+  },
+  {
+    background: "bg-zinc-400",
+    textColor: "text-zinc-900",
+  },
+  {
+    background: "bg-neutral-400",
+    textColor: "text-neutral-900",
+  },
+  {
+    background: "bg-stone-400",
+    textColor: "text-stone-900",
+  },
+  {
+    background: "bg-red-400",
+    textColor: "text-red-900",
+  },
+  {
+    background: "bg-orange-400",
+    textColor: "text-orange-900",
+  },
+  {
+    background: "bg-amber-400",
+    textColor: "text-amber-900",
+  },
+  {
+    background: "bg-yellow-400",
+    textColor: "text-yellow-900",
+  },
+  {
+    background: "bg-lime-400",
+    textColor: "text-lime-900",
+  },
+  {
+    background: "bg-green-400",
+    textColor: "text-green-900",
+  },
+  {
+    background: "bg-emerald-400",
+    textColor: "text-emerald-900",
+  },
+  {
+    background: "bg-teal-400",
+    textColor: "text-teal-900",
+  },
+  {
+    background: "bg-cyan-400",
+    textColor: "text-cyan-900",
+  },
+  {
+    background: "bg-sky-400",
+    textColor: "text-sky-900",
+  },
+  {
+    background: "bg-blue-400",
+    textColor: "text-blue-900",
+  },
+  {
+    background: "bg-indigo-400",
+    textColor: "text-indigo-900",
+  },
+  {
+    background: "bg-violet-400",
+    textColor: "text-violet-900",
+  },
+  {
+    background: "bg-purple-400",
+    textColor: "text-purple-900",
+  },
+  {
+    background: "bg-fuchsia-400",
+    textColor: "text-fuchsia-900",
+  },
+  {
+    background: "bg-pink-400",
+    textColor: "text-pink-900",
+  },
+  {
+    background: "bg-rose-400",
+    textColor: "text-rose-900",
+  },
+]
+
+const { background, textColor } =
+  TAILWIND_COLORS[Math.floor(Math.random() * TAILWIND_COLORS.length)]
+
+const { text } = Astro.props
+---
+
+<div
+  class=`${background} ${textColor} center relative inline-block select-none whitespace-nowrap rounded-lg py-2 px-2 align-baseline font-sans text-xs font-bold uppercase leading-none mr-2 mt-2`
+>
+  {text}
+</div>

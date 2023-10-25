@@ -1,0 +1,20 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content"
+import ListTitle from "../../ListTitle.astro"
+import ProjectCard from "./ProjectCard.astro"
+import { sortCollectionEntriesFromNewest } from "../../../utils/sort"
+
+const projectEntries = await getCollection("projects")
+const recentProjectEntries = sortCollectionEntriesFromNewest(
+  projectEntries
+).slice(0, 5) as CollectionEntry<"projects">[]
+---
+
+<div>
+  <ListTitle title="Recent Projects" />
+  {
+    recentProjectEntries.map((entry) => (
+      <ProjectCard project={entry.data} id={entry.id} />
+    ))
+  }
+</div>

@@ -1,0 +1,54 @@
+---
+import type { CollectionEntry } from "astro:content"
+import GithubLogoSvgRaw from "../../../assets/svgs/github-logo.svg?raw"
+import PreviewAvailableSvgRaw from "../../../assets/svgs/preview-available.svg?raw"
+import PreviewUnavailableSvgRaw from "../../../assets/svgs/preview-unavailable.svg?raw"
+import Chip from "../Chip.astro"
+
+interface Props {
+  project: CollectionEntry<"projects">["data"]
+  id: string
+}
+
+const { id, project } = Astro.props
+const { title, description, chips, githubLink, previewLink } = project
+---
+
+<div class="my-6 space-y-4">
+  <a target="_blank" class="group space-y-4" href={previewLink}>
+    <div class="flex justify-between">
+      <h2
+        transition:name={`${id}-title`}
+        class="text-2xl font-semibold group-hover:text-indigo-500"
+      >
+        {title}
+      </h2>
+      <div class="h-8 w-8 fill-white translate-y-1">
+        <span title={previewLink ? "Preview Available" : "Preview Unavailable"}>
+          {
+            previewLink ? (
+              <Fragment set:html={PreviewAvailableSvgRaw} />
+            ) : (
+              <Fragment set:html={PreviewUnavailableSvgRaw} />
+            )
+          }
+        </span>
+      </div>
+    </div>
+    <div>{chips.map((chip: string) => <Chip text={chip} />)}</div>
+    <p transition:name={`${id}-description`} class="text-xl">{description}</p>
+  </a>
+
+  <div class="text-base font-bold">
+    <a
+      class="hover:text-indigo-500 hover:-translate-y-0.5"
+      href={githubLink}
+      target="_blank"
+    >
+      <div class="inline-block h-6 w-6 mr-2 fill-white">
+        <Fragment set:html={GithubLogoSvgRaw} />
+      </div>
+      <div class="inline-block -translate-y-1">Link to repo</div></a
+    >
+  </div>
+</div>
