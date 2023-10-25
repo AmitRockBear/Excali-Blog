@@ -1,8 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content"
 import GithubLogoSvgRaw from "../../../assets/svgs/github-logo.svg?raw"
-import PreviewAvailableSvgRaw from "../../../assets/svgs/preview-available.svg?raw"
-import PreviewUnavailableSvgRaw from "../../../assets/svgs/preview-unavailable.svg?raw"
+import PreviewIcon from "../PreviewIcon.astro"
 import Chip from "../Chip.astro"
 
 interface Props {
@@ -24,15 +23,7 @@ const { title, description, chips, githubLink, previewLink } = project
         {title}
       </h2>
       <div class="h-8 w-8 fill-white translate-y-1">
-        <span title={previewLink ? "Preview Available" : "Preview Unavailable"}>
-          {
-            previewLink ? (
-              <Fragment set:html={PreviewAvailableSvgRaw} />
-            ) : (
-              <Fragment set:html={PreviewUnavailableSvgRaw} />
-            )
-          }
-        </span>
+        <PreviewIcon previewLink={previewLink} />
       </div>
     </div>
     <div>{chips.map((chip: string) => <Chip text={chip} />)}</div>

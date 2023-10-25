@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content"
 import { Image } from "astro:assets"
 import Chip from "../Chip.astro"
 import GithubLogoSvgRaw from "../../../assets/svgs/github-logo.svg?raw"
+import PreviewIcon from "../PreviewIcon.astro"
 
 interface Props {
   project: CollectionEntry<"projects">["data"]
@@ -13,35 +14,46 @@ const { id, project } = Astro.props
 const { title, description, chips, githubLink, previewLink, image } = project
 ---
 
-<a target="_blank" class="group space-y-4" href={previewLink}>
+<div class="group space-y-4">
   <div
     class="flex flex-col items-center gap-x-4 rounded-md bg-slate-800 p-3 md:flex-row"
   >
-    <Image
-      class="group-hover:translate-y-0.5"
-      src={image.src}
-      alt={image.alt}
-      width="96"
-      height="96"
-    />
-    <div>
-      <h2
-        transition:name={`${id}-title`}
-        class="md:text-left text-center text-xl font-semibold group-hover:text-indigo-500 md:inline-block"
-      >
-        {title}
-      </h2>
-      <a
-        class="hover:text-indigo-500 hover:-translate-y-0.5"
-        href={githubLink}
-        target="_blank"
-      >
-        <div
-          class="m-auto fill-white md:inline-block md:ml-2 md:translate-y-1 h-6 w-6"
-        >
-          <Fragment set:html={GithubLogoSvgRaw} />
+    <a target="_blank" class="group space-y-4" href={previewLink}>
+      <Image
+        class="group-hover:translate-y-0.5"
+        src={image.src}
+        alt={image.alt}
+        width="96"
+        height="96"
+      />
+    </a>
+    <div class="w-full">
+      <div class="flex justify-between">
+        <div>
+          <h2
+            transition:name={`${id}-title`}
+            class="md:text-left text-center text-xl font-semibold group-hover:text-indigo-500 md:inline-block"
+          >
+            {title}
+          </h2>
+          <a
+            class="hover:text-indigo-500 hover:-translate-y-0.5"
+            href={githubLink}
+            target="_blank"
+          >
+            <div
+              class="fill-white md:inline-block md:ml-2 md:translate-y-1 h-6 w-6"
+            >
+              <Fragment set:html={GithubLogoSvgRaw} />
+            </div>
+          </a>
         </div>
-      </a>
+        <a target="_blank" href={previewLink}>
+          <div class="h-8 w-8 fill-white translate-y-1">
+            <PreviewIcon previewLink={previewLink} />
+          </div>
+        </a>
+      </div>
       <p
         transition:name={`${id}-description`}
         class="md:text-left text-center text-gray-400"
@@ -51,4 +63,4 @@ const { title, description, chips, githubLink, previewLink, image } = project
       <div>{chips.map((chip: string) => <Chip text={chip} />)}</div>
     </div>
   </div>
-</a>
+</div>

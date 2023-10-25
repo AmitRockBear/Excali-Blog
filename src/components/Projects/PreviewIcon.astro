@@ -1,0 +1,20 @@
+---
+import PreviewAvailableSvgRaw from "../../assets/svgs/preview-available.svg?raw"
+import PreviewUnavailableSvgRaw from "../../assets/svgs/preview-unavailable.svg?raw"
+
+interface Props {
+  previewLink: string | undefined
+}
+
+const { previewLink } = Astro.props
+---
+
+<span title={previewLink ? "Preview Available" : "Preview Unavailable"}>
+  {
+    previewLink ? (
+      <Fragment set:html={PreviewAvailableSvgRaw} />
+    ) : (
+      <Fragment set:html={PreviewUnavailableSvgRaw} />
+    )
+  }
+</span>
