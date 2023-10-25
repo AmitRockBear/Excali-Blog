@@ -3,16 +3,20 @@ import type { CollectionEntry } from "astro:content"
 
 interface Props {
   post: CollectionEntry<"posts">["data"]
+  id: string
 }
 
-const { post } = Astro.props
+const { id, post } = Astro.props
 const { title, type, description } = post
 ---
 
-<div class="my-6 space-y-4">
+<div class="space-y-4">
   <h2 class="text-2xl font-semibold group-hover:text-indigo-500">
-    {title}&nbsp
-    <span class="text-sm text-indigo-500 font-medium">{type}</span>
+    <span transition:name={`${id}-title`}>{title}</span>&nbsp
+    <span
+      transition:name={`${id}-type`}
+      class="text-sm text-indigo-500 font-medium">{type}</span
+    >
   </h2>
   <p class="text-xl">{description}</p>
   <h4 class="text-lg font-bold">

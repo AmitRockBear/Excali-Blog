@@ -7,7 +7,7 @@ import { sortCollectionEntriesFromNewest } from "../../utils/sort"
 const postEntries = await getCollection("posts")
 const recentPostEntries = sortCollectionEntriesFromNewest(postEntries).slice(
   0,
-  10
+  5
 ) as CollectionEntry<"posts">[]
 ---
 
@@ -16,7 +16,9 @@ const recentPostEntries = sortCollectionEntriesFromNewest(postEntries).slice(
   {
     recentPostEntries.map((entry) => (
       <a class="group" href={`posts/${entry.slug}`}>
-        <PostCard post={entry.data} />
+        <div class="my-6">
+          <PostCard post={entry.data} id={entry.id} />
+        </div>
       </a>
     ))
   }

@@ -4,9 +4,10 @@ import PageBaseLayout from "./PageBaseLayout.astro"
 
 interface Props {
   post: CollectionEntry<"posts">["data"]
+  id: string
 }
 
-const { post } = Astro.props
+const { id, post } = Astro.props
 const { title, type, publishDate } = post
 ---
 
@@ -15,8 +16,16 @@ const { title, type, publishDate } = post
     <h6 class="pt-16 text-gray-500 text-lg">
       Publish Date: {publishDate.toISOString().slice(0, 10)}
     </h6>
-    <h1 class="text-4xl text-center font-bold pt-16 mb-4">{title}</h1>
-    <h2 class="pb-24 text-center text-base text-indigo-500 font-medium">
+    <h1
+      transition:name={`${id}-title`}
+      class="text-4xl text-center font-bold pt-16 mb-4"
+    >
+      {title}
+    </h1>
+    <h2
+      transition:name={`${id}-type`}
+      class="pb-24 text-center text-base text-indigo-500 font-medium"
+    >
       {type}
     </h2>
     <article
