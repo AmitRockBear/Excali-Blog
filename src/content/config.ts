@@ -19,6 +19,10 @@ const projectsCollection = defineCollection({
     githubLink: z.string(),
     previewLink: z.string().optional(),
     publishDate: z.date(),
+    image: z.object({
+      src: z.string(),
+      alt: z.string(),
+    }),
   }),
 })
 
