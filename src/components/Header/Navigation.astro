@@ -2,15 +2,15 @@
 import NavLink from "./NavLink.astro"
 
 const LINKS = [
-  { text: "Projects", href: "/projects" },
-  { text: "Posts", href: "/posts" },
-  { text: "About", href: "/posts/about" },
-  { text: "Contact", href: "/contact" },
+  { text: "Projects", href: "/projects", isExternal: false },
+  { text: "Posts", href: "/posts", isExternal: false },
+  { text: "About", href: "/posts/about", isExternal: false },
+  { text: "Contact", href: "mailto:amitrockach@gmail.com", isExternal: true },
 ]
 ---
 
 <nav>
   <ul class="flex gap-x-3 font-medium text-gray-200">
-    {LINKS.map((link) => <NavLink text={link.text} href={link.href} />)}
+    {LINKS.map((link) => <NavLink link={link} />)}
   </ul>
 </nav>

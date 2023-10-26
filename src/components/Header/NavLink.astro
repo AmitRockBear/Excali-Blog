@@ -1,12 +1,16 @@
 ---
 interface Props {
-  text: string
-  href: string
+  link: {
+    text: string
+    href: string
+    isExternal: boolean
+  }
 }
 
-const { text, href } = Astro.props
+const { link } = Astro.props
+const { text, href, isExternal } = link
 ---
 
 <li class="hover:text-yellow-300 hover:-translate-y-0.5">
-  <a href={href}>{text}</a>
+  <a href={href} target={isExternal ? "_blank" : "_self"}>{text}</a>
 </li>
