@@ -1,0 +1,8 @@
+title: "To Do App"
+description: "Simple CRUD full-stack app made for learning how to use PostgreSQL."
+chips: ["React", "Express", "PostgreSQL"]
+githubLink: "https://github.com/AmitRockBear/Todo-App"
+publishDate: 2020-01-01
+image:
+  src: "/images/projects/todo-app.png"
+  alt: "To Do List"

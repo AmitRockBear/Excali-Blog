@@ -1,0 +1,8 @@
+title: "Simple Forum"
+description: "Simple forum using the MVC architecture."
+chips: ["EJS", "Express", "MongoDB", "GridFS", "Passport-auth"]
+githubLink: "https://github.com/AmitRockBear/Simple-Forum"
+publishDate: 2020-01-01
+image:
+  src: "/images/projects/simple-forum.png"
+  alt: "Speech Balloon Icon"

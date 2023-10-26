@@ -1,0 +1,8 @@
+title: "Second Hand Games"
+description: "Full-stack app made for advertising 2nd hand games."
+chips: ["React", "MUI", "Express", "PostgreSQL", "JWT", "Multer"]
+githubLink: "https://github.com/AmitRockBear/Second-Hand-Games-Fullstack"
+publishDate: 2020-01-01
+image:
+  src: "/images/projects/second-hand-games.png"
+  alt: "Game Controller Icon"

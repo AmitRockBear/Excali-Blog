@@ -1,0 +1,8 @@
+title: "Frogger Clone"
+description: "A remake of the classic game Frogger, where you must safely navigate the frog through traffic and over the river to reach your home. The slight twist is that all the game's assets have a space-related theme."
+chips: ["Javascript"]
+githubLink: "https://github.com/AmitRockBear/Frogger-Clone"
+publishDate: 2021-04-17
+image:
+  src: "/images/projects/frogger-clone.png"
+  alt: "Rocket Icon"

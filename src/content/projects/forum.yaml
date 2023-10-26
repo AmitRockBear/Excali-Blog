@@ -1,0 +1,8 @@
+title: "Forum"
+description: "Full-stack dark theme forum app."
+chips: ["React", "MUI", "Express", "MongoDB"]
+githubLink: "https://github.com/AmitRockBear/Forum"
+publishDate: 2020-01-01
+image:
+  src: "/images/projects/forum.png"
+  alt: "Forum Icon"
