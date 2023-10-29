@@ -2,6 +2,7 @@ title: "Whatsapp Web Clone"
 description: "Fullstack chat-app that looks like WhatsApp Web."
 chips: ["React", "Redux", "MUI", "Express", "MongoDB", "Passport-auth"]
 githubLink: "https://github.com/AmitRockBear/WhatsApp-Web-Clone"
+previewLink: "https://whats-app-web-clone-server.vercel.app"
 publishDate: 2020-01-01
 image:
   src: "/images/projects/whatsapp-web-clone.png"
