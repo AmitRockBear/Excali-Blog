@@ -1,18 +1,19 @@
 ---
+import type { GetStaticPaths } from "astro"
 import { getCollection, type CollectionEntry } from "astro:content"
 import PageBaseLayout from "../../layouts/PageBaseLayout.astro"
 import ProjectsList from "../../components/Projects/ProjectsList/index.astro"
 import { sortCollectionEntriesFromNewest } from "../../utils/sort"
 import Pagination from "../../components/Pagination.astro"
 
-export async function getStaticPaths({ paginate }: any) {
+export const getStaticPaths = (async ({ paginate }) => {
   const projectEntries = await getCollection("projects")
   const projectEntriesFromNewest = sortCollectionEntriesFromNewest(
     projectEntries
   ) as CollectionEntry<"projects">[]
 
   return paginate(projectEntriesFromNewest, { pageSize: 10 })
-}
+}) satisfies GetStaticPaths
 
 const title = "Projects"
 

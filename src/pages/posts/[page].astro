@@ -6,14 +6,14 @@ import PostsList from "../../components/Posts/PostsList.astro"
 import { sortCollectionEntriesFromNewest } from "../../utils/sort"
 import Pagination from "../../components/Pagination.astro"
 
-export async function getStaticPaths({ paginate }: any) {
+export const getStaticPaths = (async ({ paginate }) => {
   const postEntries = await getCollection("posts")
   const postEntriesFromNewest = sortCollectionEntriesFromNewest(
     postEntries
   ) as CollectionEntry<"posts">[]
 
   return paginate(postEntriesFromNewest, { pageSize: 10 })
-}
+}) satisfies GetStaticPaths
 
 const title = "Posts"
 
