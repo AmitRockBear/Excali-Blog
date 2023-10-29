@@ -1,0 +1,17 @@
+---
+interface Props {
+  currentPage: number
+  prev: string | undefined
+  next: string | undefined
+}
+
+const { next, prev, currentPage } = Astro.props
+const prevVisibility = prev ? "visible" : "invisible"
+const nextVisibility = next ? "visible" : "invisible"
+---
+
+<div class="flex justify-center align-middle my-2 font-bold">
+  <a class:list={["mx-2", "text-indigo-500", prevVisibility]} href={prev}>🡠</a>
+  <span class="font-normal">{currentPage}</span>
+  <a class:list={["mx-2", "text-indigo-500", nextVisibility]} href={next}>🡢</a>
+</div>

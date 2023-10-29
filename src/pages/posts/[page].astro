@@ -1,0 +1,41 @@
+---
+import type { GetStaticPaths } from "astro"
+import { getCollection, type CollectionEntry } from "astro:content"
+import PageBaseLayout from "../../layouts/PageBaseLayout.astro"
+import PostsList from "../../components/Posts/PostsList.astro"
+import { sortCollectionEntriesFromNewest } from "../../utils/sort"
+import Pagination from "../../components/Pagination.astro"
+
+export async function getStaticPaths({ paginate }: any) {
+  const postEntries = await getCollection("posts")
+  const postEntriesFromNewest = sortCollectionEntriesFromNewest(
+    postEntries
+  ) as CollectionEntry<"posts">[]
+
+  return paginate(postEntriesFromNewest, { pageSize: 10 })
+}
+
+const title = "Posts"
+
+const { page } = Astro.props
+const { data: currentPagePostEntries, url, currentPage, end } = page
+const { prev, next } = url
+const totalNumofPosts = end + 1
+---
+
+<PageBaseLayout title={title}>
+  <div class="mx-8">
+    <div class="flex justify-between mb-4">
+      <h1 class="text-4xl font-bold">
+        {title}
+      </h1>
+      <div class="flex flex-col justify-end">
+        <h4 class="text-md font-bold">
+          {`${totalNumofPosts} total`}
+        </h4>
+      </div>
+    </div>
+    <PostsList postEntries={currentPagePostEntries} />
+    <Pagination prev={prev} currentPage={currentPage} next={next} />
+  </div>
+</PageBaseLayout>
