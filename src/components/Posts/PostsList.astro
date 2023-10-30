@@ -9,17 +9,12 @@ interface Props {
 const { postEntries } = Astro.props
 ---
 
-<div>
-  <div class="grid grid-cols-2 gap-8">
-    {
-      postEntries.map((entry) => (
-        <a
-          class="group rounded-md bg-slate-800 p-3"
-          href={`posts/${entry.slug}`}
-        >
-          <PostCard post={entry.data} id={entry.id} />
-        </a>
-      ))
-    }
-  </div>
+<div class="grid grid-cols-2 gap-8">
+  {
+    postEntries.map((entry) => (
+      <a class="group rounded-md bg-slate-800 p-3" href={entry.slug}>
+        <PostCard post={entry.data} id={entry.id} />
+      </a>
+    ))
+  }
 </div>
