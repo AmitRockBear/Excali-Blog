@@ -9,7 +9,7 @@ interface Props {
 const { postEntries } = Astro.props
 ---
 
-<div class="grid grid-cols-2 gap-8">
+<div class="grid md:grid-cols-2 gap-8">
   {
     postEntries.map((entry) => (
       <a class="group rounded-md bg-slate-800 p-3" href={entry.slug}>
