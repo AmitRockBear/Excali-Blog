@@ -17,8 +17,8 @@ While building this blog, I stumbled upon a problem when trying to create a chip
 
 However, it turns out that this approach doesn't work. After spending a couple of hours debugging my app and searching the web, I couldn't figure out why my Chip component didn't have any color applied to it. The weirdest thing was that when inspecting the component in Chrome, it did include the class names:
 
-![Inspect Chip](/images/posts/post-3/inspect.PNG)
-![Chip With No Style](/images/posts/post-3/no-style-chip.PNG)
+![Inspect Chip](/images/posts/the-one-gotcha-of-tailwind/inspect.PNG)
+![Chip With No Style](/images/posts/the-one-gotcha-of-tailwind/no-style-chip.PNG)
 
 This made me wonder if the class did not exist. As Tailwind states in its documentation:
 
