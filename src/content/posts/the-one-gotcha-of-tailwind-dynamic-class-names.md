@@ -7,6 +7,10 @@ publishDate: 2023-11-01
 
 **_Disclaimer:_** This post is intended for individuals who are new to Tailwind. If you have extensive experience with Tailwind, the content may seem familiar to you.
 
+To those of you who prefer watching a video:
+
+<iframe class="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/MFYrjrD7hyU" title="The One GOTCHA of Tailwind Dynamic Class Names" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
 While building this blog, I stumbled upon a problem when trying to create a chip component. For no particular reason, I decided that every chip would have a random color. Well, that sounds easy; I can generate a random color name and use it like this:
 
 ```astro
