@@ -1,5 +1,5 @@
 ---
-title: "How Excali Blog Came To Life"
+title: "How Excali Blog Came To Life?"
 description: "What led to the creation of Excali Blog"
 type: "Personal"
 publishDate: 2023-10-28
@@ -23,7 +23,7 @@ Going through Astro's documentation, I was enlightened. This framework has every
 
 - It integrates with other frameworks like React.
 - SSR/SSG capabilities.
-- It lets you decide when to hydrate every component, in case you use SSR, using Astro Islands.
+- It lets you decide when to hydrate every component, using Astro Islands.
 
 These features are great, and having all of them in a single framework is incredible. Surprisingly, the "feature" that caught my eye the most is the one that lets you embed a markdown file into HTML. Although some will find it dumb, I had always thought that to create a new non-generic post on my blog, I would be required to write a new HTML page, which I didn't like because HTML and CSS can get annoying sometimes. That "feature" is incredible to me; the fact that I can create a post by writing a markdown file sounds too simple to be true.
 
