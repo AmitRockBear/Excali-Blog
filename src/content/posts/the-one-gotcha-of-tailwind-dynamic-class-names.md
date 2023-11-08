@@ -7,7 +7,7 @@ publishDate: 2023-11-01
 
 **_Disclaimer:_** This post is intended for individuals who are new to Tailwind. If you have extensive experience with Tailwind, the content may seem familiar to you.
 
-For those of you who prefer watching a video:
+For those of you who prefer to watch a video I made on my channel regarding this subject:
 
 <iframe class="mx-auto" width="560" height="315" src="https://www.youtube.com/embed/MFYrjrD7hyU" title="The One GOTCHA of Tailwind Dynamic Class Names" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
 
@@ -21,8 +21,8 @@ While building this blog, I stumbled upon a problem when trying to create a chip
 
 However, it turns out that this approach doesn't work. After spending a couple of hours debugging my app and searching the web, I couldn't figure out why my Chip component didn't have any color applied to it. The weirdest thing was that when inspecting the component in Chrome, it did include the class names:
 
-![Inspect Chip](/images/posts/the-one-gotcha-of-tailwind/inspect.PNG)
-![Chip With No Style](/images/posts/the-one-gotcha-of-tailwind/no-style-chip.PNG)
+![Div inspect - element has both background and text-color classes](/images/posts/the-one-gotcha-of-tailwind/inspect.PNG)
+![No background or change in text-color for div although classes exist on inspect](/images/posts/the-one-gotcha-of-tailwind/no-style-chip.PNG)
 
 This made me wonder if the class did not exist. As Tailwind states in its documentation:
 
@@ -48,7 +48,7 @@ This means that instead of generating the `randomColor` variable and "constructi
 
 #### Is There Any Other Way?
 
-Apparently, there is. According to a comment I found on Stackoverflow while writing this article, you can simply add the unbroken strings of Tailwind class names you want to use as comments somewhere in your code. This will cause Tailwind to extract those classes at build time. However, I didn't find this approach quite appealing since it makes your website rely on comments in your code, which is a bit unusual.
+Apparently, there is. According to a comment I found on StackOverflow while writing this article, you can simply add the unbroken strings of Tailwind class names you want to use as comments somewhere in your code. This will cause Tailwind to extract those classes at build time. However, I didn't find this approach quite appealing since it makes your website rely on comments in your code, which is a bit unusual.
 
 ### My Chip Component
 
@@ -95,4 +95,4 @@ const { text } = Astro.props
 #### Future Plans
 
 - Move the `TAILWIND_COLORS` variable to another file that is more "global". For now, it doesn't bother me since it is the only file that uses this kind of array.
-- Generate same random color for the same chipText appearing in multiple places on this blog.
+- Generate the same random color for the same chipText appearing in multiple places on this blog.
