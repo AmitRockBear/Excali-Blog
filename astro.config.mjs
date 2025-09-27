@@ -1,35 +1,35 @@
-import { defineConfig } from "astro/config"
-import tailwind from "@astrojs/tailwind"
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
-import vercel from "@astrojs/vercel/serverless"
+import vercel from '@astrojs/vercel';
 
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  output: "hybrid",
+  output: 'static',
   adapter: vercel(),
   markdown: {
-    remarkPlugins: ["remark-math"],
+    remarkPlugins: ['remark-math'],
     rehypePlugins: [
       [
-        "rehype-katex",
+        'rehype-katex',
         {
           macros: {
-            "\\E": "\\mathbb{E}",
-            "\\C": "\\mathbb{C}",
-            "\\R": "\\mathbb{R}",
-            "\\N": "\\mathbb{N}",
-            "\\Q": "\\mathbb{Q}",
-            "\\bigO": "\\mathcal{O}",
-            "\\abs": "|#1|",
-            "\\set": "\\{ #1 \\}",
-            "\\indep": "{\\perp\\mkern-9.5mu\\perp}",
-            "\\nindep": "{\\not\\!\\perp\\!\\!\\!\\perp}",
-            "\\latex": "\\LaTeX",
-            "\\katex": "\\KaTeX",
+            '\\E': '\\mathbb{E}',
+            '\\C': '\\mathbb{C}',
+            '\\R': '\\mathbb{R}',
+            '\\N': '\\mathbb{N}',
+            '\\Q': '\\mathbb{Q}',
+            '\\bigO': '\\mathcal{O}',
+            '\\abs': '|#1|',
+            '\\set': '\\{ #1 \\}',
+            '\\indep': '{\\perp\\mkern-9.5mu\\perp}',
+            '\\nindep': '{\\not\\!\\perp\\!\\!\\!\\perp}',
+            '\\latex': '\\LaTeX',
+            '\\katex': '\\KaTeX',
           },
         },
       ],
     ],
   },
-})
+});
