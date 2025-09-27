@@ -1,0 +1,9 @@
+title: "Simplify Reporting"
+description: This tool ingests an Interactive Brokers account report in CSV form and produces a concise, year-end summary of trades, commissions and dividends to streamline your tax preparation. It's provided “as is” for informational purposes only and does not constitute financial, investment or tax advice.
+chips: ["Python", "Flask", "HTML", "CSS", "JavaScript"]
+githubLink: "https://github.com/AmitRockBear/simplify-reporting"
+previewLink: "https://simplify-reporting.vercel.app/"
+publishDate: 2025-04-25
+image:
+  src: "/images/projects/simplify-reporting.png"
+  alt: "Tax Reporting Icon"
