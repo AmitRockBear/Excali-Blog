@@ -14,7 +14,6 @@ chips:
     'TypeScript',
   ]
 githubLink: 'https://github.com/AmitRockBear/finly'
-previewLink: 'https://github.com/AmitRockBear/finly'
 publishDate: 2026-01-01
 image:
   src: '/images/projects/finly.png'
