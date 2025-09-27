@@ -1,0 +1,9 @@
+title: 'AI PR Reviewer'
+description: AI-powered pull request reviewer that analyzes code changes for bugs, style issues, and best practices.
+chips: ['Python', 'Github Actions', 'HTML', 'CSS', 'JavaScript']
+githubLink: 'https://github.com/AmitRockBear/pr-checker'
+previewLink: 'https://github.com/AmitRockBear/pr-checker'
+publishDate: 2025-05-04
+image:
+  src: '/images/projects/ai-pr-reviewer.png'
+  alt: 'AI PR Reviewer Icon'
