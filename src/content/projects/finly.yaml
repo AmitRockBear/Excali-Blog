@@ -1,0 +1,21 @@
+title: 'WIP: Finly'
+description: Finly is a web application that allows users to track and analyze real-time financial data from publicly traded companies.
+chips:
+  [
+    'Next.js',
+    'React',
+    'TailwindCSS',
+    'Shadcn UI',
+    'TanStack React Query',
+    'tRPC',
+    'Drizzle ORM',
+    'Postgres',
+    'Zod',
+    'TypeScript',
+  ]
+githubLink: 'https://github.com/AmitRockBear/finly'
+previewLink: 'https://github.com/AmitRockBear/finly'
+publishDate: 2026-01-01
+image:
+  src: '/images/projects/finly.png'
+  alt: 'Finly Icon'
